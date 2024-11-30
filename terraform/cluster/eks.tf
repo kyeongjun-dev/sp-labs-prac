@@ -40,6 +40,10 @@ module "eks" {
     }
   }
 
+  # Cluster access entry
+  # To add the current caller identity as an administrator
+  enable_cluster_creator_admin_permissions = true
+
   tags = {
         Terraform = "true"
         Environment = "dev"
@@ -49,4 +53,8 @@ module "eks" {
 
 output "eks_cluster_oidc_provider" {
   value = "${module.eks.oidc_provider}"
+}
+
+output "eks_cluster_oidc_provider_arn" {
+  value = "${module.eks.oidc_provider_arn}"
 }
