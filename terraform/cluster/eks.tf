@@ -50,3 +50,7 @@ module "eks" {
 output "eks_cluster_oidc_provider" {
   value = "${module.eks.oidc_provider}"
 }
+
+output "eks_cluster_oidc_provider_arn" {
+  value = "${module.eks.oidc_provider_arn}"
+}
