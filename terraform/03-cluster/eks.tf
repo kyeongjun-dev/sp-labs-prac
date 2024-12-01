@@ -1,7 +1,7 @@
 data "terraform_remote_state" "remote_resource" {
   backend = "local"
   config = {
-    path = "../share/terraform.tfstate"
+    path = "../01-share/terraform.tfstate"
   }
 }
 
@@ -37,6 +37,9 @@ module "eks" {
       min_size     = 1
       max_size     = 4
       desired_size = 1
+      labels = {
+        "name" = "example"
+      }
     }
   }
 
