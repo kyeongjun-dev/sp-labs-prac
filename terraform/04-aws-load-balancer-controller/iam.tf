@@ -1,7 +1,7 @@
 data "terraform_remote_state" "remote_resource" {
   backend = "local"
   config = {
-    path = "../cluster/terraform.tfstate"
+    path = "../03-cluster/terraform.tfstate"
   }
 }
 
