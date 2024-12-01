@@ -33,6 +33,7 @@ POLICY
 }
 
 # 다운로드 : curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.7.2/docs/install/iam_policy.json
+# elasticloadbalancing:DescribeListenerAttributes 추가
 resource "aws_iam_policy" "aws_loadbalancer_controller_policy" {
   name        = "AWSLoadBalancerControllerPolicy"
   path        = "/"
@@ -80,7 +81,8 @@ resource "aws_iam_policy" "aws_loadbalancer_controller_policy" {
                     "elasticloadbalancing:DescribeTargetGroupAttributes",
                     "elasticloadbalancing:DescribeTargetHealth",
                     "elasticloadbalancing:DescribeTags",
-                    "elasticloadbalancing:DescribeTrustStores"
+                    "elasticloadbalancing:DescribeTrustStores",
+                    "elasticloadbalancing:DescribeListenerAttributes",
                 ],
                 "Resource": "*"
             },

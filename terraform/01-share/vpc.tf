@@ -9,6 +9,16 @@ module "vpc" {
     private_subnets = ["192.168.3.0/24", "192.168.4.0/24"]
     intra_subnets   = ["192.168.5.0/24", "192.168.6.0/24"]
 
+    public_subnet_tags = {
+      "kubernetes.io/cluster/dev" = "shared"
+      "kubernetes.io/role/elb" = "1"
+    }
+
+    private_subnet_tags = {
+      "kubernetes.io/cluster/dev" = "shared"
+      "kubernetes.io/role/internal-elb" = "1"
+    }
+
     enable_nat_gateway = true
     single_nat_gateway = false
     one_nat_gateway_per_az = true
