@@ -2,12 +2,12 @@ module "vpc" {
     source = "terraform-aws-modules/vpc/aws"
 
     name = "vpc-dev"
-    cidr = "192.168.0.0/16"
+    cidr = "10.21.0.0/16"
 
     azs             = ["ap-northeast-2a", "ap-northeast-2c"]
-    public_subnets  = ["192.168.1.0/24", "192.168.2.0/24"]
-    private_subnets = ["192.168.3.0/24", "192.168.4.0/24"]
-    intra_subnets   = ["192.168.5.0/24", "192.168.6.0/24"]
+    public_subnets  = ["10.21.0.0/24", "10.21.1.0/24"]
+    private_subnets = ["10.21.32.0/24", "10.21.33.0/24"]
+    intra_subnets   = ["10.21.64.0/24", "10.21.65.0/24"]
 
     public_subnet_tags = {
       "kubernetes.io/cluster/dev" = "shared"
