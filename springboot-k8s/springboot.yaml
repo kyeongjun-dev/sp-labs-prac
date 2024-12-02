@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: 685853271774.dkr.ecr.ap-northeast-2.amazonaws.com/springboot:lastest
+        image: 685853271774.dkr.ecr.ap-northeast-2.amazonaws.com/springboot:latest
         ports:
         - containerPort: 8080
         resources:

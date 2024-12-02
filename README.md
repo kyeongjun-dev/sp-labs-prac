@@ -13,7 +13,7 @@
 0. provider.tf.template 파일 이름을 provider.tf로 변경 후, terraform 디렉토리의 하위 디렉토리 모두 복사
 1. terraform/01-share : vpc 관련 리소스, springboot 이미지가 올라가는 ecr 생성
 2. terraform/02-githubactions : github actions에서 사용할 AWS Role (assume role) 생성 - 여기서 생성된 AWS Role의 arn을 github repo의 Secret에 등록
-3. terraform/03-cluster : eks 클러스터 생성
+3. terraform/03-cluster : eks 클러스터 생성 - `example`, `worker` 노드그룹 생성
 4. terraform/04-aws-load-balancer-controller : eks 클러스터의 kube-system namespace에 aws load balancer controller에서 사용할 serviceAccount 생성 및 serviceAccount에서 사용할 AWS Policy, Role 생성 및 연결
 5. helm 디렉토리 이동 후, README 참고하여 aws load balancer controller 설치
 6. terraform/05-cluster-autoscaler : eks 클러스터의 kube-system namespace에 cluster-autoscaler servicdAccount 생성 및 serviceAccount에서 사용할 AWS Policy, Role 생성 및 연결
