@@ -26,3 +26,4 @@
 - 생성되는 서브넷은 public, private 서브넷 각각 2개
 - 생성하는 클러스터 이름은 `dev`로 가정 - subnet tag에 사용
 - 생성되는 노드그룹의 이름은 `example`, `worker`
+- github actions, aws load balancer controller, cluster autoscaler는 oidc 및 assume role 방식으로 동작
