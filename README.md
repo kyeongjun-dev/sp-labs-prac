@@ -4,6 +4,11 @@
 - terraform으로 구성한 인프로 소스코드파일 및 README
 - 사용방법은 terraform/README 참고
 
+## 생성 테스트 환경
+- terraform : v1.3.2
+- helm : v3.15.3
+- aws-cli : 2.21.3
+
 ## 생성 순서
 0. provider.tf.template 파일 이름을 provider.tf로 변경 후, terraform 디렉토리의 하위 디렉토리 모두 복사
 1. terraform/01-share : vpc 관련 리소스, springboot 이미지가 올라가는 ecr 생성
