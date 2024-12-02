@@ -1,3 +1,4 @@
+# aws loadbalancer controller
 ## crd 설치
 ```
 kubectl apply -f aws-load-balancer-controller-crds.yaml
@@ -45,9 +46,49 @@ diff charts/aws-load-balancer-controller/values.yaml values/aws-load-balancer-co
 < nodeSelector: {}
 ---
 > nodeSelector:
->   eks.amazonaws.com/nodegroup: example-2024113007024524500000000e
+>   name: example
 119c120
 < clusterName:
 ---
 > clusterName: dev
+```
+---
+# cluster autoscaler
+## 설치
+```
+helm install cluster-autoscaler charts/cluster-autoscaler -f values/cluster-autoscaler.yaml -n kube-system
+```
+
+## 수정 항목
+```
+diff charts/cluster-autoscaler/values.yaml values/cluster-autoscaler.yaml 
+17c17
+<   clusterName:  # cluster.local
+---
+>   clusterName: dev
+76c76
+< awsRegion: us-east-1
+---
+> awsRegion: ap-northeast-2
+185c185
+<   # balance-similar-node-groups: true
+---
+>   balance-similar-node-groups: true
+195c195
+<   # skip-nodes-with-system-pods: true
+---
+>   skip-nodes-with-system-pods: false
+288c288,289
+< nodeSelector: {}
+---
+> nodeSelector:
+>   name: example
+336c337
+<     create: true
+---
+>     create: false
+338c339
+<     name: ""
+---
+>     name: "cluster-autoscaler"
 ```

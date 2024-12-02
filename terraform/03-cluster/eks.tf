@@ -40,6 +40,22 @@ module "eks" {
       labels = {
         "name" = "example"
       }
+    },
+    worker = {
+      ami_type       = "AL2023_x86_64_STANDARD"
+      instance_types = ["m5.large"]
+
+      min_size     = 1
+      max_size     = 4
+      desired_size = 1
+      labels = {
+        "name" = "worker"
+        "role" = "worker"
+      }
+      tags = {
+        "k8s.io/cluster-autoscaler/enabled" = "true"
+        "k8s.io/cluster-autoscaler/dev" = "true"
+      }
     }
   }
 

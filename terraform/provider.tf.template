@@ -1,4 +1,11 @@
+# 설정된 profile, region 입력
 provider "aws" {
     profile = ""
     region = "ap-northeast-2"
+}
+
+# serviceAccount를 eks 클러스터에 생성하기 위해 config 파일 및 config context 이름 설정
+provider "kubernetes" { 
+  config_path    = "~/.kube/config"
+  config_context = "dev"
 }
