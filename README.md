@@ -15,7 +15,7 @@
 7. helm 디렉토리 이동 후, README 참고하여 cluster autoscaler 설치
 8. github actions를 이용해 ECR에 springboot 컨테이너 이미지를 push - 소스코드는 springboot 디렉토리
 9. springboot-k8s 디렉토리 이동 후, README 참고하여 Deployment, Ingress (ALB) 생성
-10. 생성된 ALB 주소로 접근하여 응답 테스트
+10. 생성된 ALB 주소로 접근하여 응답 테스트 - `<alb 주소>/` : hello world 텍스트 출력, `<alb 주소>/ip` : ip주소 출력 (트래픽 라운드로빈 확인용도)
 
 ### 참고사항
 - 생성되는 서브넷은 public, private 서브넷 각각 2개
